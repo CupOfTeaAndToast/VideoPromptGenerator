@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+    <script src="popup.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PRO VIDEO DIRECTOR</h1>
+            <p class="subtitle">Image-to-Video Cinematographer</p>
+        </header>
+
+        <div class="grid">
+            <section>
+                <label>GENRE / STYLE</label>
+                <select id="genrePreset">
+                    <option value="Cinematic">Cinematic (Balanced)</option>
+                    <option value="Horror">Horror (Tense/Handheld)</option>
+                    <option value="Street Style">Street Style (Raw/Candid)</option>
+                    <option value="Interview">Interview (Static/Formal)</option>
+                    <option value="Action">Action (Kinetic)</option>
+                    <option value="Cyberpunk">Cyberpunk (Neon/Moody)</option>
+                    <option value="SciFi">Sci-Fi (Clinical/Clean)</option>
+                </select>
+            </section>
+            <section>
+                <label>CAMERA MOTION</label>
+                <select id="cameraMovement">
+                    <option value="Genre Default">Cinematic (Genre-Based)</option>
+                    <option value="Handheld">Handheld (Organic)</option>
+                    <option value="Static">Static (Locked)</option>
+                    <option value="Dolly In">Slow Dolly In</option>
+                    <option value="Orbital">Orbital Pan</option>
+                </select>
+            </section>
+        </div>
+
+        <div class="grid">
+            <section>
+                <label>DURATION: <span id="durVal">10</span>s</label>
+                <input type="range" id="sequenceDuration" min="3" max="15" value="10">
+            </section>
+            <section>
+                <label>CUTS: <span id="cutVal">4</span></label>
+                <input type="range" id="cutCount" min="1" max="25" value="4">
+            </section>
+        </div>
+
+        <div class="grid">
+            <section>
+                <label>GENRE INFLUENCE: <span id="infVal">5</span></label>
+                <input type="range" id="genreInfluence" min="1" max="10" value="5">
+            </section>
+            <section>
+                <label>MOTION INTENSITY: <span id="motionVal">5</span></label>
+                <input type="range" id="motionSlider" min="1" max="10" value="5">
+            </section>
+        </div>
+
+        <section>
+            <label>SOUNDTRACK / AUDIO</label>
+            <select id="audioStyle">
+                <option value="Ambient Foley">Foley Only (Realistic)</option>
+                <option value="Cinematic Score">Cinematic Score</option>
+                <option value="Tense Drones">Tense Drones</option>
+                <option value="Muted">Silence</option>
+            </select>
+        </section>
+
+        <section>
+            <label>DIALOGUE / AUDIO CUES</label>
+            <textarea id="dialogueInput" placeholder='Character: "Line" or [Sound Effect description]'></textarea>
+        </section>
+
+        <section>
+            <label>SUBJECT / ACTION FOCUS</label>
+            <textarea id="subjectInput" placeholder="Describe the main character/object in your image and what they are doing..."></textarea>
+        </section>
+
+        <button id="generateBtn">GENERATE MASTER PROMPT</button>
+        <button id="copyBtn">COPY MASTER PROMPT</button>
+        <textarea id="outputPrompt" readonly></textarea>
+
+        <footer>
+            <p>Optimized for Seedance & Kling Image-to-Video</p>
+        </footer>
+    </div>
+</body>
+</html>
